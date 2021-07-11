@@ -14,7 +14,11 @@ export const FormDatos = () => {
             <select>
               <option value="DNI">DNI</option>
             </select>
-            <input type="text" placeholder="Nro. de doc" />
+            <input
+              className="formulario-inputs__group-doc"
+              type="text"
+              placeholder="Nro. de doc"
+            />
           </div>
           <div className="formulario-inputs__group">
             <input type="text" placeholder="Celular" />
