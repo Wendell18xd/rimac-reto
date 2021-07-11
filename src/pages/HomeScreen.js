@@ -5,9 +5,9 @@ import { FormDatos } from "../components/home/FormDatos";
 
 export const HomeScreen = () => {
   return (
-    <div className="home__screen">
+    <div className="home">
       <Header />
-      <div className="home">
+      <div className="home__body">
         <Banner />
         <FormDatos />
       </div>
