@@ -1,18 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ArmaPlanScreen } from "../pages/ArmaPlanScreen";
-import { DatosAutoScreen } from "../pages/DatosAutoScreen";
-import { GraciasScreen } from "../pages/GraciasScreen";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { Header } from "../components/Header";
 import { HomeScreen } from "../pages/HomeScreen";
+import { AuthRouter } from "./AuthRouter";
 export const AppRouter = () => {
   return (
     <Router>
+      <Header />
       <div>
         <Switch>
-          <Route path="/datosauto" component={DatosAutoScreen} />
-          <Route path="/armaplan" component={ArmaPlanScreen} />
-          <Route path="/gracias" component={GraciasScreen} />
-          <Route path="/" component={HomeScreen} />
+          <Route path="/auth" component={AuthRouter} />
+          <Route exact path="/" component={HomeScreen} />
+
+          <Redirect to="/" />
         </Switch>
       </div>
     </Router>

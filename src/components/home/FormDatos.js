@@ -29,7 +29,11 @@ export const FormDatos = () => {
         </div>
         {/* Politicas */}
         <div className="formulario-politicas">
-          <input className="formulario-politicas__checkbox" type="checkbox" />
+          <input
+            className="formulario-politicas__checkbox"
+            type="checkbox"
+            // checked={true}
+          />
           <p className="formulario-politicas__terminos">
             Acepto la <span>Política de Protecciòn de Datos Personales</span> y
             los <span>Términos y Condiciones.</span>

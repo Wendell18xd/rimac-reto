@@ -1,57 +1,124 @@
 .banner {
-  width: 39%;
-  max-width: 39%;
-  min-width: 536px;
+  @include md {
+    width: 39%;
+    max-width: 39%;
+    min-width: 536px;
+  }
+
   &-fondo {
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: #f7f8fc;
+    height: 308px;
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include md {
+      flex-direction: column;
+      height: 100%;
+      background-image: url("../../img/fondorimac.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 
   &-chicaimg {
-    padding-top: 96px;
-    padding-left: 152px;
+    width: 112px;
+    height: 276px;
+    padding-top: 56px;
+    padding-left: 4.4%;
+
+    @include md {
+      padding-top: 96px;
+      padding-left: 152px;
+    }
+
+    &__grande {
+      display: none;
+      @include md {
+        display: block;
+      }
+    }
+
+    &__peque {
+      display: block;
+      @include md {
+        display: none;
+      }
+    }
   }
 
   &-texto {
-    width: 320px;
-    padding-left: 152px;
+    width: 200px;
+    height: 72px;
+    padding-top: 96px;
+    padding-left: 8.8%;
+
+    @include md {
+      padding-top: 0px;
+      width: 320px;
+      padding-left: 152px;
+    }
 
     &__nuevo {
       font-family: "Lato";
-      font-size: 12px;
       font-style: normal;
-      font-weight: 700;
+      font-weight: bold;
+      font-size: 10px;
       line-height: 16px;
-      letter-spacing: 0.800000011920929px;
-      text-align: left;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       color: #494f66;
+
+      @include md {
+        font-size: 12px;
+        letter-spacing: 0.800000011920929px;
+        text-align: left;
+        color: #494f66;
+      }
     }
 
     &__tracking {
-      padding-top: 4px;
-      padding-bottom: 16px;
-      font-family: Lato;
+      font-family: "Lato";
       font-style: normal;
       font-weight: normal;
-      font-size: 36px;
-      line-height: 48px;
-      letter-spacing: -0.2px;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: -0.6px;
       color: #494f66;
+      padding-top: 8px;
+      padding-bottom: 12px;
+
+      @include md {
+        padding-top: 4px;
+        padding-bottom: 16px;
+        font-size: 36px;
+        line-height: 48px;
+        letter-spacing: -0.2px;
+      }
 
       span {
         color: $primary;
+        span {
+          color: #494f66;
+          @include md {
+            color: $primary;
+          }
+        }
       }
     }
 
     &__parrafo {
-      width: 288px;
+      width: 183px;
+      height: 48px;
       font-family: "Roboto";
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
       line-height: 24px;
       color: #676f8f;
+      @include md {
+        width: 288px;
+        height: 48px;
+      }
     }
   }
 }
