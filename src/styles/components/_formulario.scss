@@ -1,0 +1,93 @@
+.formulario {
+  width: 100%;
+  padding-left: 224px;
+
+  // titulo
+  &-titulo {
+    padding-top: 112px;
+    width: 288px;
+    height: 36px;
+    padding-bottom: 24px;
+
+    &__text {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: -0.2px;
+      color: #494f66;
+    }
+  }
+  // inputs
+  &-inputs {
+    &__group {
+      width: 288px;
+      height: 56px;
+      display: flex;
+      padding-bottom: 16px;
+
+      input {
+        width: 100%;
+        border: 1px solid #c5cbe0;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #a3abcc;
+        padding: 16px;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      select {
+        width: 96.67px;
+        border: 1px solid #c5cbe0;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: #494f66;
+      }
+    }
+  }
+  //  terminos y politicas
+  &-politicas {
+    display: flex;
+    padding-top: 8px;
+
+    &__checkbox {
+      width: 20px;
+      height: 20px;
+      background: #43b748;
+      border-radius: 4px;
+    }
+
+    &__terminos {
+      padding-left: 12px;
+      padding-bottom: 40px;
+      width: 254px;
+      height: 40px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: #676f8f;
+
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ export const HomeScreen = () => {
   return (
     <div className="home">
       <Header />
-      <div className="home__body">
+      <div className="home-body">
         <Banner />
         <FormDatos />
       </div>

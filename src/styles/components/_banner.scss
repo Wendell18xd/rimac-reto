@@ -1,1 +1,57 @@
+.banner {
+  width: 39%;
+  max-width: 39%;
+  min-width: 536px;
+  &-fondo {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
+  &-chicaimg {
+    padding-top: 96px;
+    padding-left: 152px;
+  }
+
+  &-texto {
+    width: 320px;
+    padding-left: 152px;
+
+    &__nuevo {
+      font-family: "Lato";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0.800000011920929px;
+      text-align: left;
+      color: #494f66;
+    }
+
+    &__tracking {
+      padding-top: 4px;
+      padding-bottom: 16px;
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 48px;
+      letter-spacing: -0.2px;
+      color: #494f66;
+
+      span {
+        color: $primary;
+      }
+    }
+
+    &__parrafo {
+      width: 288px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+      color: #676f8f;
+    }
+  }
+}
