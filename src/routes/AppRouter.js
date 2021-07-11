@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Header } from "../components/Header";
+import { GraciasScreen } from "../pages/GraciasScreen";
 import { HomeScreen } from "../pages/HomeScreen";
 import { AuthRouter } from "./AuthRouter";
 export const AppRouter = () => {
@@ -15,6 +16,7 @@ export const AppRouter = () => {
       <div>
         <Switch>
           <Route path="/auth" component={AuthRouter} />
+          <Route path="/gracias" component={GraciasScreen} />
           <Route exact path="/" component={HomeScreen} />
 
           <Redirect to="/" />

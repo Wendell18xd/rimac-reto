@@ -1,0 +1,66 @@
+.sidebar {
+  width: 408px;
+  background: #f7f8fc;
+
+  &-options {
+    padding-left: 120px;
+    padding-top: 48px;
+
+    &-group {
+      padding-bottom: 48px;
+
+      &__navlink {
+        display: flex;
+        text-decoration: none;
+
+        span {
+          height: 24px;
+          width: 24px;
+          border: 1px solid #c5cbe0;
+          box-sizing: border-box;
+          border-radius: 100%;
+
+          font-family: "Lato";
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.6px;
+          text-transform: uppercase;
+          color: #c5cbe0;
+
+          display: flex;
+          align-items: center;
+          justify-items: center;
+          justify-content: center;
+
+          margin-right: 16px;
+        }
+      }
+
+      &__text {
+        width: 184px;
+        height: 24px;
+
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: #a3abcc;
+      }
+    }
+  }
+
+  &-activeclass {
+    p {
+      color: #494f66;
+    }
+
+    span {
+      background: #6f7dff;
+      color: white;
+    }
+  }
+}

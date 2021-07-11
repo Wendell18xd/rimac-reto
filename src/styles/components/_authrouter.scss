@@ -1,0 +1,26 @@
+.authrouter {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &-background-white {
+    background-color: white;
+    width: 100%;
+    height: 56px;
+    border-bottom: 1px solid #e4e8f7;
+
+    @include md {
+      height: 64px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include md {
+      flex-direction: row;
+    }
+  }
+}
