@@ -1,8 +1,15 @@
 .sidebar {
-  width: 408px;
   background: #f7f8fc;
 
+  @include md {
+    width: 408px;
+  }
   &-options {
+    display: none;
+
+    @include md {
+      display: block;
+    }
     padding-left: 120px;
     padding-top: 48px;
 
@@ -61,6 +68,17 @@
     span {
       background: #6f7dff;
       color: white;
+    }
+  }
+
+  &-sm {
+    display: block;
+    @include md {
+      display: none;
+    }
+    &-options {
+      height: 48px;
+      background-color: rebeccapurple;
     }
   }
 }

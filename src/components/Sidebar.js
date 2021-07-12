@@ -28,6 +28,9 @@ export const Sidebar = () => {
           </NavLink>
         </div>
       </div>
+      <div className="sidebar-sm">
+        <div className="sidebar-sm-options"></div>
+      </div>
     </div>
   );
 };

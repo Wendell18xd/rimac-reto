@@ -1,9 +1,10 @@
 import React from "react";
+import { Left } from "../components/datosauto/Left";
 
 export const DatosAutoScreen = () => {
   return (
-    <div>
-      <h1>Datos Auto Screen</h1>
+    <div className="datosauto">
+      <Left />
     </div>
   );
 };
