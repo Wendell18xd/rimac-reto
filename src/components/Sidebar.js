@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import arrowleft from "../img/arrowleft.svg";
 
 export const Sidebar = () => {
   const [medida, setMedida] = useState({
     sm: 50,
-    md: "sidebar-activeclass",
+    p1: true,
+    p2: false,
   });
 
   const history = useHistory();
@@ -20,7 +21,8 @@ export const Sidebar = () => {
     if (location.pathname === "/auth/datosauto") {
       setMedida({
         sm: 50,
-        md: "sidebar-activeclass",
+        p1: true,
+        p2: false,
       });
     }
   }, [location.pathname]);
@@ -29,7 +31,8 @@ export const Sidebar = () => {
     if (location.pathname === "/auth/armaplan") {
       setMedida({
         sm: 100,
-        md: "sidebar-activeclass",
+        p1: false,
+        p2: true,
       });
     }
   }, [location.pathname]);
@@ -38,26 +41,24 @@ export const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebar-options">
         <div className="sidebar-options-group">
-          <NavLink
-            exact
-            to="/auth/datosauto"
-            activeClassName="sidebar-activeclass"
-            className="sidebar-options-group__navlink"
+          <div
+            className={`sidebar-options-group__navlink ${
+              medida.p1 && "sidebar-activeclass"
+            } `}
           >
             <span>1</span>
             <p className="sidebar-options-group__text">Datos del auto</p>
-          </NavLink>
+          </div>
         </div>
         <div className="sidebar-options-group">
-          <NavLink
-            exact
-            to="/auth/armaplan"
-            activeClassName="sidebar-activeclass"
-            className="sidebar-options-group__navlink"
+          <div
+            className={`sidebar-options-group__navlink ${
+              medida.p2 && "sidebar-activeclass"
+            } `}
           >
             <span>2</span>
             <p className="sidebar-options-group__text">Arma tu plan</p>
-          </NavLink>
+          </div>
         </div>
       </div>
       <div className="sidebar-sm">

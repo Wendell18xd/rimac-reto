@@ -6,13 +6,20 @@ import arrow from "../../img/arrow.svg";
 import raya from "../../img/raya.png";
 import rayita from "../../img/rayita.svg";
 import { Right } from "./Right";
+import { useHistory } from "react-router-dom";
 
 export const Left = () => {
+  const history = useHistory();
+
+  const back = () => {
+    history.goBack();
+  };
+
   return (
     <>
       <div className="datosauto-left">
         <div className="datosauto-left-volver">
-          <button> {"<"} </button>
+          <button onClick={back}> {"<"} </button>
           <p>VOLVER</p>
         </div>
         <div className="datosauto-left-titulo">
