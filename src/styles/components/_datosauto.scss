@@ -10,10 +10,17 @@
 
   //   LEFT
   &-left {
-    padding-right: 64px;
+    padding-left: 32px;
+    @include md {
+      padding-right: 64px;
+    }
 
     &-volver {
-      display: flex;
+      display: none;
+
+      @include md {
+        display: flex;
+      }
       align-items: center;
       padding-bottom: 24px;
 
@@ -48,27 +55,31 @@
     }
 
     &-titulo {
+      padding-top: 40px;
       width: 296px;
       padding-bottom: 32px;
 
       @include md {
         width: 448px;
+        padding-top: 0px;
       }
 
       h1 {
-        height: 48px;
+        height: 36px;
         padding-bottom: 8px;
 
         font-family: "Lato";
         font-style: normal;
         font-weight: normal;
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 28px;
+        line-height: 36px;
         letter-spacing: -0.6px;
         color: #494f66;
-        width: 268px;
+
         @include md {
-          width: 214px;
+          height: 48px;
+          font-size: 40px;
+          line-height: 48px;
         }
 
         span {
@@ -77,19 +88,27 @@
       }
 
       p {
-        width: 214px;
-        height: 28px;
         font-family: "Roboto";
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 28px;
-
         color: #676f8f;
+
+        @include md {
+          width: 214px;
+          height: 28px;
+        }
       }
     }
 
     &-formulario {
+      width: 296px;
+
+      @include md {
+        width: auto;
+      }
+
       &__group {
         margin-bottom: 16px;
         width: 100%;
@@ -100,7 +119,7 @@
         border-radius: 4px;
         position: relative;
 
-        width: 286px;
+        width: 296px;
         @include md {
           width: 384px;
         }
@@ -129,8 +148,12 @@
           appearance: none;
           background-image: url("../../img/flecha.png");
           background-repeat: no-repeat;
-          background-position-x: 355px;
+          background-position-x: 267px;
           background-position-y: 25px;
+
+          @include md {
+            background-position-x: 355px;
+          }
 
           font-family: "Lato";
           font-style: normal;
@@ -143,14 +166,25 @@
       }
 
       &-sino {
-        padding-top: 24px;
         display: flex;
-        width: 400px;
-        height: 24px;
-        padding-left: 13px;
+        flex-direction: column;
+        width: 141px;
+        height: 60px;
+
+        padding-top: 32px;
+
+        @include md {
+          width: 400px;
+          height: 24px;
+          padding-top: 24px;
+          padding-left: 13px;
+          flex-direction: row;
+        }
 
         span {
-          padding-right: 112px;
+          @include md {
+            padding-right: 112px;
+          }
 
           font-family: "Lato";
           font-style: normal;
@@ -160,6 +194,14 @@
           text-align: center;
           letter-spacing: 0.2px;
           color: #494f66;
+        }
+        &__group {
+          padding-top: 14px;
+          display: flex;
+
+          @include md {
+            padding-top: 0px;
+          }
         }
 
         &__radio {
@@ -206,12 +248,35 @@
         height: 1px;
         margin-top: 40px;
         margin-bottom: 40px;
+
+        display: none;
+        @include md {
+          display: block;
+        }
       }
 
       &-suma {
-        width: 384px;
-        height: 56px;
+        width: 296px;
+        height: 116px;
         display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 40px;
+
+        @include md {
+          flex-direction: row;
+          width: 384px;
+          height: 56px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+
+        &__text {
+          padding-bottom: 16px;
+          @include md {
+            padding-bottom: 0px;
+          }
+        }
 
         p {
           font-family: "Lato";
@@ -219,9 +284,12 @@
           font-weight: normal;
           font-size: 16px;
           line-height: 24px;
-          text-align: center;
           letter-spacing: 0.2px;
           color: #494f66;
+
+          @include md {
+            text-align: center;
+          }
 
           span {
             font-size: 12px;
@@ -241,15 +309,18 @@
         }
 
         &-accion {
-          width: 160px;
           height: 56px;
           border: 1px solid #c5cbe0;
           box-sizing: border-box;
           border-radius: 8px;
-          margin-left: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
+
+          @include md {
+            margin-left: 44px;
+            width: 160px;
+          }
 
           button {
             outline: none;
@@ -277,9 +348,15 @@
       }
 
       &-continuarbtn {
-        width: 192px;
-        height: 56px;
-        margin-top: 40px;
+        width: 296px;
+        height: 52px;
+
+        @include md {
+          margin-top: 40px;
+          width: 192px;
+          height: 56px;
+          margin-left: 0px;
+        }
 
         font-family: "Lato";
         font-size: 14px;
@@ -313,12 +390,29 @@
 
   //   RIGHT
   &-right {
-    width: 224px;
-    margin-left: 64px;
+    width: 296px;
+    height: 80px;
+    margin-top: 8px;
+
+    background: #f7f8fc;
+    border-radius: 8px;
+
+    @include md {
+      margin-top: 0px;
+      width: 224px;
+      height: auto;
+      margin-left: 64px;
+      background: transparent;
+    }
 
     &-ayuda {
       &__ayuda {
-        margin-bottom: 16px;
+        display: none;
+
+        @include md {
+          display: block;
+        }
+
         font-size: 12px;
         font-style: normal;
         font-weight: 700;
@@ -328,32 +422,82 @@
       }
 
       &__hr {
+        display: none;
+
+        @include md {
+          display: block;
+        }
+
         margin-bottom: 16px;
         width: 224px;
       }
 
       &__modelo {
+        gap: 16px;
         display: flex;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0.20000000298023224px;
-        text-align: left;
+
+        flex-direction: row-reverse;
+
+        @include md {
+          gap: 0px;
+          flex-direction: row;
+        }
+
+        &-texto {
+          padding-top: 16px;
+          padding-right: 16px;
+          height: 80px;
+
+          @include md {
+            padding-top: 0px;
+            padding-right: 0px;
+            height: auto;
+          }
+        }
 
         span {
-          width: 128px;
-          height: 48px;
-          margin-right: 32px;
+          width: 200px;
+          height: 24px;
+
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 24px;
+
+          color: #676f8f;
+
+          @include md {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.20000000298023224px;
+            text-align: left;
+
+            width: 128px;
+            height: 48px;
+            margin-right: 32px;
+          }
         }
 
         img {
-          width: 64px;
-          height: 64px;
+          padding: 16px;
+          width: 48px;
+          height: 48px;
+
+          @include md {
+            width: 64px;
+            height: 64px;
+            padding: 0px;
+          }
         }
       }
 
       &__click {
+        padding-top: 4px;
+        @include md {
+          padding-top: 16px;
+        }
+
         font-size: 10px;
         font-style: normal;
         font-weight: 700;
@@ -365,6 +509,29 @@
         text-transform: uppercase;
         cursor: pointer;
       }
+    }
+  }
+  &-footer {
+    display: block;
+    @include md {
+      display: none;
+    }
+
+    margin-top: 56px;
+    height: 76px;
+    border-top: 1px solid #e4e8f7;
+    p {
+      margin-left: 32px;
+      height: 75px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.2px;
+      color: #a3abcc;
     }
   }
 }

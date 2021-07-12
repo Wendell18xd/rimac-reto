@@ -11,10 +11,12 @@ export const Right = () => {
           <img src={raya224} alt="-" />
         </div>
         <div className="datosauto-right-ayuda__modelo">
-          <span>¿No encuentras el modelo ?</span>
+          <div className="datosauto-right-ayuda__modelo-texto">
+            <span>¿No encuentras el modelo ?</span>
+            <p className="datosauto-right-ayuda__click">clic aquí</p>
+          </div>
           <img src={iconcar} alt="iconcar" />
         </div>
-        <p className="datosauto-right-ayuda__click">clic aquí</p>
       </div>
     </div>
   );
