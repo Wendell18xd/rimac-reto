@@ -1,7 +1,39 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
+
+import arrowleft from "../img/arrowleft.svg";
 
 export const Sidebar = () => {
+  const [medida, setMedida] = useState({
+    sm: 50,
+    md: "sidebar-activeclass",
+  });
+
+  const history = useHistory();
+  const { location } = history;
+
+  const back = () => {
+    history.goBack();
+  };
+
+  useEffect(() => {
+    if (location.pathname === "/auth/datosauto") {
+      setMedida({
+        sm: 50,
+        md: "sidebar-activeclass",
+      });
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname === "/auth/armaplan") {
+      setMedida({
+        sm: 100,
+        md: "sidebar-activeclass",
+      });
+    }
+  }, [location.pathname]);
+
   return (
     <div className="sidebar">
       <div className="sidebar-options">
@@ -29,7 +61,24 @@ export const Sidebar = () => {
         </div>
       </div>
       <div className="sidebar-sm">
-        <div className="sidebar-sm-options"></div>
+        <div className="sidebar-sm-options">
+          <div className="sidebar-sm-options-back">
+            <button onClick={back}>
+              <img src={arrowleft} alt="<" />
+            </button>
+          </div>
+          <div className="sidebar-sm-options-pasos">
+            <p>Paso 1 de 2</p>
+          </div>
+          <div className="sidebar-sm-options-barra">
+            <div className="sidebar-sm-options-barra__fondo">
+              <div
+                className="sidebar-sm-options-barra__morado"
+                style={{ width: medida.sm + "%" }}
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
