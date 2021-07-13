@@ -69,7 +69,8 @@ export const Sidebar = () => {
             </button>
           </div>
           <div className="sidebar-sm-options-pasos">
-            <p>Paso 1 de 2</p>
+            {medida.p1 && <p>Paso 1 de 2</p>}
+            {medida.p2 && <p>Paso 2 de 2</p>}
           </div>
           <div className="sidebar-sm-options-barra">
             <div className="sidebar-sm-options-barra__fondo">

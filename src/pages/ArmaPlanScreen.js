@@ -1,9 +1,14 @@
 import React from "react";
+import { Left } from "../components/armaplan/Left";
+import { Right } from "../components/armaplan/Right";
 
 export const ArmaPlanScreen = () => {
   return (
-    <div>
-      <h1>Arma Plan Screen</h1>
+    <div className="armaplan">
+      <form>
+        <Left />
+        <Right />
+      </form>
     </div>
   );
 };
