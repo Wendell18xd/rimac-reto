@@ -1,21 +1,79 @@
 .armaplan {
-  display: flex;
-  flex-direction: column;
+  &-from {
+    display: flex;
+    flex-direction: column;
 
-  @include sm {
-    flex-direction: row;
+    @include sm {
+      flex-direction: row;
+    }
   }
 
   &-left {
+    &-volver {
+      margin-left: 96px;
+      padding-top: 48px;
+      display: none;
+      width: 96px;
+      height: 24px;
+
+      @include sm {
+        display: flex;
+      }
+
+      button {
+        margin-right: 16px;
+        width: 24px;
+        height: 24px;
+        background: white;
+        outline: none;
+        border: 1px solid #fc606b;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      p {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+
+        color: #a3abcc;
+      }
+    }
+
     &-cobertura {
       height: 340px;
       background: #f7f8fc;
+
+      @include sm {
+        background-color: white;
+        width: 384px;
+        height: 316px;
+      }
 
       &-titulo {
         width: 296px;
         height: 36px;
         padding-top: 40px;
         margin-left: 32px;
+
+        @include sm {
+          width: 384px;
+          height: 48px;
+          margin-top: 28px;
+          padding-top: 0px;
+          margin-left: 96px;
+        }
+
         h1 {
           font-family: "Lato";
           font-style: normal;
@@ -24,6 +82,11 @@
           line-height: 36px;
           letter-spacing: -0.6px;
           color: #494f66;
+
+          @include sm {
+            font-size: 40px;
+            line-height: 48px;
+          }
         }
       }
 
@@ -32,6 +95,12 @@
         height: 28px;
         margin-top: 8px;
         margin-left: 32px;
+
+        @include sm {
+          width: 248px;
+          height: 28px;
+          margin-left: 96px;
+        }
 
         p {
           font-family: "Roboto";
@@ -51,12 +120,29 @@
         display: flex;
         margin-top: 24px;
         margin-left: 32px;
+        position: relative;
+
+        @include md {
+          width: 384px;
+          height: 188px;
+          margin-top: 44px;
+          margin-left: 96px;
+          border: 3px solid #f0f2fa;
+          box-sizing: border-box;
+        }
 
         &-detalles {
           margin-top: 24px;
           margin-left: 24px;
           margin-right: 16px;
           margin-bottom: 24px;
+
+          @include sm {
+            margin-top: 40px;
+            margin-left: 32px;
+            margin-right: 32px;
+            margin-bottom: 40px;
+          }
 
           &__numero {
             width: 176px;
@@ -77,6 +163,11 @@
             width: 176px;
             height: 48px;
 
+            @include sm {
+              width: 192px;
+              height: 56px;
+            }
+
             h2 {
               font-family: "Lato";
               font-style: normal;
@@ -86,6 +177,13 @@
               letter-spacing: 0.2px;
 
               color: #494f66;
+
+              @include sm {
+                font-size: 20px;
+                line-height: 28px;
+                display: flex;
+                align-items: center;
+              }
             }
           }
 
@@ -94,6 +192,11 @@
             height: 16px;
             cursor: pointer;
             margin-top: 16px;
+
+            @include sm {
+              width: 46px;
+              height: 16px;
+            }
 
             p {
               font-family: "Lato";
@@ -104,18 +207,33 @@
               letter-spacing: 0.8px;
               text-transform: uppercase;
               color: #6f7dff;
+
+              @include sm {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.6px;
+              }
             }
           }
         }
 
         &-imagen {
+          position: absolute;
           width: 80px;
           height: 156px;
-          position: relative;
+          left: 216px;
+          top: -8px;
+
+          @include sm {
+            width: 112px;
+            height: 196px;
+            left: 256px;
+            top: -14px;
+          }
 
           img {
-            position: absolute;
-            bottom: 8px;
+            width: 100%;
+            height: 100%;
           }
         }
       }
@@ -129,6 +247,13 @@
         height: 28px;
         padding-top: 56px;
         margin-left: 32px;
+
+        @include sm {
+          width: 226px;
+          height: 28px;
+          padding-top: 64px;
+          margin-left: 96px;
+        }
 
         h1 {
           font-family: "Lato";
@@ -148,6 +273,12 @@
         display: flex;
         justify-items: center;
         justify-content: center;
+        cursor: pointer;
+
+        @include sm {
+          width: 384px;
+          margin-left: 96px;
+        }
 
         font-family: "Lato";
         font-style: normal;
@@ -186,12 +317,71 @@
         &__llanta {
           &-titulobotton {
             display: flex;
+            flex-direction: row;
+
+            @include sm {
+              flex-direction: column;
+            }
+
+            &__quitar {
+              display: none;
+
+              @include sm {
+                display: flex;
+                align-items: center;
+                margin-left: 169px;
+                margin-bottom: 20px;
+                margin-top: 16px;
+              }
+
+              input {
+                cursor: pointer;
+                appearance: none;
+                width: 24px;
+                height: 24px;
+                border-radius: 100%;
+                border: 1px solid #939dff;
+                content: url("../../img/mas.svg");
+                padding: 5px;
+
+                &:checked {
+                  content: url("../../img/menos.svg");
+                  + label {
+                    &::before {
+                      content: "quitar";
+                    }
+                  }
+                }
+              }
+
+              label {
+                margin-left: 12px;
+                font-family: "Lato";
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+
+                color: #6f7dff;
+                &::before {
+                  content: "agregar";
+                }
+              }
+            }
+
             &__titulo {
               display: flex;
               width: 213px;
               height: 40px;
               margin-top: 32px;
               margin-left: 32px;
+
+              @include sm {
+                margin-left: 97px;
+                margin-bottom: 16px;
+              }
 
               &__img {
                 width: 40px;
@@ -203,6 +393,11 @@
                 width: 157px;
                 height: 24px;
 
+                @include sm {
+                  width: 260px;
+                  height: 58px;
+                }
+
                 p {
                   font-family: "Lato";
                   font-style: normal;
@@ -211,11 +406,48 @@
                   line-height: 24px;
                   letter-spacing: 0.2px;
                   color: #494f66;
+
+                  @include sm {
+                    font-size: 20px;
+                    line-height: 28px;
+                    width: 260px;
+                    height: 58px;
+                  }
+                }
+              }
+
+              &__vermas {
+                display: none;
+
+                @include sm {
+                  display: block;
+                  margin-left: 35px;
+                }
+
+                input {
+                  appearance: none;
+                  width: 20px;
+                  height: 20px;
+                  content: url("../../img/arrowleftred.svg");
+                  padding: 4px;
+                  transform: rotate(-90deg);
+                  cursor: pointer;
+                  transition: 1s;
+
+                  &:checked {
+                    transition: 1s;
+                    content: url("../../img/arrowleftred.svg");
+                    transform: rotate(90deg);
+                  }
                 }
               }
             }
 
             &__botton {
+              @include sm {
+                display: none;
+              }
+
               width: 51px;
               height: 31px;
               margin-top: 32px;
@@ -267,6 +499,10 @@
           height: 216px;
           margin-left: 88px;
 
+          @include sm {
+            margin-left: 196px;
+          }
+
           p {
             font-family: "Roboto";
             font-style: normal;
@@ -278,6 +514,10 @@
         }
 
         &__llanta-botton {
+          @include sm {
+            display: none;
+          }
+
           width: 89px;
           height: 16px;
           margin-top: 16px;
@@ -306,9 +546,15 @@
         }
 
         &-hr {
+          width: 296px;
           margin: 32px 32px 0px 32px;
           border: 0 none;
           border-top: 1px solid #e4e8f7;
+
+          @include sm {
+            margin: 32px 32px 0px 96px;
+            width: 384px;
+          }
         }
       }
     }
@@ -318,12 +564,90 @@
     height: 76px;
     margin-top: 56px;
     display: flex;
+    flex-direction: row;
+
+    @include sm {
+      flex-direction: column;
+      height: auto;
+      width: 224px;
+      margin-top: 212px;
+    }
+
+    &-logo {
+      display: none;
+
+      @include sm {
+        display: block;
+        margin-left: 84px;
+      }
+
+      &__parrafo {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 5.95349px;
+        line-height: 8px;
+        text-align: center;
+        letter-spacing: 0.595349px;
+        text-transform: uppercase;
+
+        color: #676f8f;
+        margin-right: 5px;
+      }
+    }
+    &-precioincluye {
+      display: none;
+
+      @include sm {
+        display: block;
+        h1 {
+          font-family: "Lato";
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          color: #494f66;
+        }
+
+        p {
+          margin-top: 12px;
+          span {
+            margin-right: 19px;
+          }
+        }
+      }
+    }
+    &-hr {
+      display: none;
+
+      @include sm {
+        display: block;
+      }
+
+      margin-top: 19px;
+      margin-bottom: 24px;
+      border: none;
+      border-top: 1px solid #e4e8f7;
+    }
+
+    @include sm {
+      margin-left: 96px;
+    }
 
     &-dinero {
       margin-top: 14px;
       margin-left: 32px;
       width: 104px;
       height: 48px;
+      display: flex;
+
+      @include sm {
+        height: auto;
+        width: auto;
+        margin-left: 0px;
+        margin-top: 0px;
+      }
 
       h1 {
         font-family: "Lato";
@@ -333,6 +657,11 @@
         line-height: 32px;
         letter-spacing: -0.2px;
         color: #494f66;
+
+        @include sm {
+          font-size: 28px;
+          line-height: 36px;
+        }
       }
 
       p {
@@ -345,6 +674,15 @@
         text-transform: uppercase;
 
         color: #494f66;
+
+        @include sm {
+          font-family: "Roboto";
+          font-size: 12px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.2px;
+          color: #676f8f;
+        }
       }
     }
 
@@ -353,6 +691,13 @@
       height: 44px;
       margin-top: 16px;
       margin-left: 24px;
+
+      @include sm {
+        width: 224px;
+        height: 48px;
+        margin-top: 32px;
+        margin-left: 0px;
+      }
 
       button {
         width: 100%;

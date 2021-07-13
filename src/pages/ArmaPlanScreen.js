@@ -5,7 +5,7 @@ import { Right } from "../components/armaplan/Right";
 export const ArmaPlanScreen = () => {
   return (
     <div className="armaplan">
-      <form>
+      <form className="armaplan-from">
         <Left />
         <Right />
       </form>

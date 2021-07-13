@@ -1,5 +1,5 @@
 import React from "react";
-import chicorimac from "../../img/chicorimac.png";
+import chicorimacsm from "../../img/chicorimacsm.png";
 
 export const Cobertura = () => {
   return (
@@ -23,7 +23,7 @@ export const Cobertura = () => {
           </div>
         </div>
         <div className="armaplan-left-cobertura-placa-imagen">
-          <img src={chicorimac} alt="chicorimac" />
+          <img src={chicorimacsm} alt="chicorimac" />
         </div>
       </div>
     </div>

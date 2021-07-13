@@ -35,10 +35,27 @@ export const AddorRemove = () => {
               <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__titulo__texto">
                 <p>Llanta robada</p>
               </div>
+              <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__titulo__vermas">
+                <input type="checkbox" checked={true} onChange={() => {}} />
+              </div>
+            </div>
+            <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__quitar">
+              <input
+                type="checkbox"
+                name="llanta_checkbox"
+                checked={true}
+                onChange={() => {}}
+              />
+              <label htmlFor="llanta_checkbox"></label>
             </div>
             <div>
               <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__botton">
-                <input type="checkbox" id="switch-label-llanta" />
+                <input
+                  type="checkbox"
+                  id="switch-label-llanta"
+                  checked={true}
+                  onChange={() => {}}
+                />
                 <label
                   className="labelswitch"
                   htmlFor="switch-label-llanta"
@@ -75,6 +92,13 @@ export const AddorRemove = () => {
               <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__titulo__texto">
                 <p> Choque y/o pasarte la luz roja </p>
               </div>
+              <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__titulo__vermas">
+                <input type="checkbox" />
+              </div>
+            </div>
+            <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__quitar">
+              <input type="checkbox" id="choque_checkbox" />
+              <label htmlFor="choque_checkbox"></label>
             </div>
             <div>
               <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__botton">
@@ -105,6 +129,13 @@ export const AddorRemove = () => {
               <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__titulo__texto">
                 <p>Atropello en la vía Evitamiento </p>
               </div>
+              <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__titulo__vermas">
+                <input type="checkbox" />
+              </div>
+            </div>
+            <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__quitar">
+              <input type="checkbox" id="atropello_checkbox" />
+              <label htmlFor="atropello_checkbox"></label>
             </div>
             <div>
               <div className="armaplan-left-addorremove-suboptions__llanta-titulobotton__botton">
