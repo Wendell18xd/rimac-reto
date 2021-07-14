@@ -1,0 +1,182 @@
+.gracias {
+  display: flex;
+  flex-direction: column;
+
+  @include sm {
+    flex-direction: row;
+    height: calc(100vh - 65px);
+  }
+
+  &-left {
+    position: relative;
+    height: 208px;
+    background-color: #f7f8fc;
+
+    @include sm {
+      height: 100%;
+      width: 408px;
+    }
+
+    &-fondosm {
+      display: block;
+      @include sm {
+        display: none;
+      }
+    }
+
+    &-sofa {
+      display: none;
+      @include sm {
+        display: block;
+        width: 320px;
+        height: 353px;
+      }
+
+      img {
+        margin-top: 136px;
+        margin-left: 88px;
+      }
+    }
+
+    &-img {
+      position: absolute;
+      display: none;
+      width: 144px;
+      top: 12.5px;
+      left: 72px;
+
+      @include sm {
+        display: block;
+        width: 224px;
+        height: 448px;
+        left: 280px;
+        top: 96px;
+      }
+
+      img {
+        width: 100%;
+
+        @include sm {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &-right {
+    position: relative;
+    height: auto;
+
+    @include sm {
+      width: calc(100%-408px);
+    }
+
+    &-group {
+      position: absolute;
+      width: 296px;
+      height: 312px;
+      top: 48px;
+      left: 32px;
+
+      @include sm {
+        top: 160px;
+        left: 224px;
+        width: 225px;
+        height: 56px;
+      }
+
+      &-titulo {
+        @include sm {
+          width: 480px;
+          height: 144px;
+          margin-bottom: 16px;
+        }
+
+        width: 296px;
+        height: 108px;
+        margin-bottom: 24px;
+
+        h1 {
+          font-family: "Lato";
+          font-style: normal;
+          font-weight: normal;
+          font-size: 28px;
+          line-height: 36px;
+          letter-spacing: -0.6px;
+          color: #494f66;
+
+          @include sm {
+            font-size: 36px;
+            line-height: 48px;
+            letter-spacing: -0.2px;
+          }
+          span {
+            color: #ef3340;
+          }
+        }
+      }
+
+      &-parrafo {
+        width: 295px;
+        height: 84px;
+        margin-bottom: 40px;
+
+        @include sm {
+          width: 480px;
+          height: 80px;
+        }
+
+        p {
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 28px;
+          color: #676f8f;
+        }
+
+        span {
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          color: #676f8f;
+        }
+      }
+
+      &-botton {
+        width: 296px;
+        height: 56px;
+
+        @include sm {
+          width: 255px;
+        }
+
+        button {
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+
+          border: none;
+          background-color: $primary;
+          border-radius: 8px;
+
+          font-family: "Lato";
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: center;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          color: #ffffff;
+
+          &:hover {
+            transition: 0.5s;
+            background-color: darken($color: $primary, $amount: 10);
+          }
+        }
+      }
+    }
+  }
+}

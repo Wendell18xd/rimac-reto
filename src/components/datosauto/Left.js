@@ -7,6 +7,7 @@ import raya from "../../img/raya.png";
 import rayita from "../../img/rayita.svg";
 import { Right } from "./Right";
 import { useHistory } from "react-router-dom";
+import { Footer } from "../Footer";
 
 export const Left = () => {
   const history = useHistory();
@@ -102,11 +103,7 @@ export const Left = () => {
           </form>
         </div>
       </div>
-      <div className="datosauto-footer">
-        <div className="datosauto-footer__content">
-          <p>© 2020 RIMAC Seguros y Reaseguros.</p>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 };
