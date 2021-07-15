@@ -10,7 +10,9 @@ libreria `Redux` [Redux React](https://react-redux.js.org/).
 libreria para controlar mis reducers y states de manera global y sencilla.
 
 API para consultar DNI [API DNI](https://dniruc.apisperu.com/api/v1/dni/76573607?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndlbmRlbGwxOGN1ZW50YUBnbWFpbC5jb20ifQ._WX1mBzFwWWRC1ijlROXBvKaP1Y24G_fyZ-SZdYLG4M).
-use esta API para poder obtener el nombre de la persona al poner su dni
+use esta API para poder obtener el nombre de la persona al poner su dni.
+
+Para los estilos use Sass [Sass](https://sass-lang.com/)
 
 # Como divide el desarrollo del reto
 
