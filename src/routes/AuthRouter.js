@@ -14,7 +14,6 @@ export const AuthRouter = () => {
           <Switch>
             <Route exact path="/auth/datosauto" component={DatosAutoScreen} />
             <Route exact path="/auth/armaplan" component={ArmaPlanScreen} />
-
             <Redirect to="/auth/datosauto" />
           </Switch>
         </div>

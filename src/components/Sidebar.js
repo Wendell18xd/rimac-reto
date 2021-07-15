@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { logout } from "../actions/auth";
 
 import arrowleft from "../img/arrowleft.svg";
 
 export const Sidebar = () => {
+  const dispatch = useDispatch();
+
   const [medida, setMedida] = useState({
     sm: 50,
     p1: true,
@@ -14,7 +18,9 @@ export const Sidebar = () => {
   const { location } = history;
 
   const back = () => {
-    history.goBack();
+    if (history.location.pathname === "/auth/datosauto")
+      return dispatch(logout());
+    if (history.location.pathname === "/auth/armaplan") return history.goBack();
   };
 
   useEffect(() => {

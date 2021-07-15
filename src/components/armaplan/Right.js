@@ -2,14 +2,17 @@ import React from "react";
 
 import vf from "../../img/vf.png";
 import checkgreen from "../../img/checkgreen.svg";
+import { useSelector } from "react-redux";
 
 export const Right = () => {
+  const { precio } = useSelector((state) => state.cobertura);
+
   return (
     <div className="armaplan-right">
       <div className="armaplan-right-dinero">
         <div>
           <div className="armaplan-right-dinero__numero">
-            <h1>$35.00</h1>
+            <h1>${precio}.00</h1>
           </div>
           <div className="armaplan-right-dinero__mes">
             <p>MENSUAL</p>

@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import chicorimacsm from "../../img/chicorimacsm.png";
 
 export const Cobertura = () => {
+  const { placa } = useSelector((state) => state.auth);
+  const { marca, fecha } = useSelector((state) => state.cliente);
+
   return (
     <div className="armaplan-left-cobertura">
       <div className="armaplan-left-cobertura-titulo">
@@ -13,10 +17,12 @@ export const Cobertura = () => {
       <div className="armaplan-left-cobertura-placa">
         <div className="armaplan-left-cobertura-placa-detalles">
           <div className="armaplan-left-cobertura-placa-detalles__numero">
-            <p>Placa: C2U-114</p>
+            <p>Placa: {placa}</p>
           </div>
           <div className="armaplan-left-cobertura-placa-detalles__titulo">
-            <h2>Wolkswagen 2019 Golf</h2>
+            <h2>
+              {marca} {fecha} Golf
+            </h2>
           </div>
           <div className="armaplan-left-cobertura-placa-detalles__botton">
             <p>editar</p>

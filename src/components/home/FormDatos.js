@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useDispatch } from "react-redux";
+import { consultarPersona } from "../../actions/auth";
 
 const schema = yup.object().shape({
   selectdoc: yup.string().required("Seleccione un tipo de doc"),
@@ -16,7 +18,11 @@ const schema = yup.object().shape({
     .required("El celular es obligatorio")
     .min(9, "Ingrese 9 digitos como minimo")
     .length(9),
-  placa: yup.string().required("La placa es obligatoria"),
+  placa: yup
+    .string()
+    .required("La placa es obligatoria")
+    .min(7, "El minimo son 7 digitos")
+    .length(7),
   politicas: yup.boolean().required(),
 });
 
@@ -32,6 +38,10 @@ export const FormDatos = () => {
     resolver: yupResolver(schema),
   });
 
+  const dispatch = useDispatch();
+
+  const [flag, setFlag] = useState(true);
+
   const maxlench = ({ target }) => {
     const { name, value } = target;
     if (name === "numerodoc") {
@@ -45,22 +55,32 @@ export const FormDatos = () => {
         setValue("celular", value.slice(0, 9));
       }
     }
+
+    if (name === "placa") {
+      if (value.length === 0) {
+        setFlag(true);
+      }
+      if (value.length === 3 && flag) {
+        setValue("placa", value.toUpperCase() + "-");
+        setFlag(false);
+      }
+
+      if (value.length >= 7) {
+        setValue("placa", value.slice(0, 7).toUpperCase());
+        setFlag(false);
+      }
+    }
   };
 
-  const onSubmit = async (data) => {
-    if (!data.politicas) {
+  const onSubmit = async ({ numerodoc, celular, placa, politicas }) => {
+    if (!politicas) {
       return setError("politicas", {
         type: "aceptar",
         message: "Acepte los terminos primero",
       });
     }
 
-    const resp = await fetch("https://jsonplaceholder.typicode.com/users", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-    const json = await resp.json();
-    console.log(json);
+    dispatch(consultarPersona(numerodoc, celular, placa));
     reset();
   };
 
@@ -73,7 +93,7 @@ export const FormDatos = () => {
       {/* Inputs form */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="formulario-inputs">
-          <p>{errors.selectdoc?.message}</p>
+          <p className="formulario-errores">{errors.selectdoc?.message}</p>
           <div className="formulario-inputs__group">
             <select {...register("selectdoc")}>
               <option value="DNI">DNI</option>
@@ -85,8 +105,8 @@ export const FormDatos = () => {
               {...register("numerodoc")}
               onInput={maxlench}
             />
+            <p className="formulario-errores">{errors.numerodoc?.message}</p>
           </div>
-          <p>{errors.numerodoc?.message}</p>
           <div className="formulario-inputs__group">
             <input
               type="number"
@@ -94,12 +114,17 @@ export const FormDatos = () => {
               {...register("celular")}
               onInput={maxlench}
             />
+            <p className="formulario-errores">{errors.celular?.message}</p>
           </div>
-          <p>{errors.celular?.message}</p>
           <div className="formulario-inputs__group">
-            <input type="text" placeholder="Placa" {...register("placa")} />
+            <input
+              type="text"
+              placeholder="Placa"
+              {...register("placa")}
+              onInput={maxlench}
+            />
+            <p className="formulario-errores">{errors.placa?.message}</p>
           </div>
-          <p>{errors.placa?.message}</p>
         </div>
         {/* Politicas */}
         <div className="formulario-politicas">
@@ -114,9 +139,11 @@ export const FormDatos = () => {
             Acepto la <span>Política de Protecciòn de Datos Personales</span> y
             los <span>Términos y Condiciones.</span>
           </p>
-          <br />
+          <p className="formulario-errores-politica">
+            {errors.politicas?.message}
+          </p>
         </div>
-        <p>{errors.politicas?.message}</p>
+
         {/* botton */}
         <div className="formulario-botton">
           <button className="btn btn--primary">
