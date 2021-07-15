@@ -21,7 +21,7 @@ export const Cobertura = () => {
           </div>
           <div className="armaplan-left-cobertura-placa-detalles__titulo">
             <h2>
-              {marca} {fecha} Golf
+              {marca} {fecha} <br /> Golf
             </h2>
           </div>
           <div className="armaplan-left-cobertura-placa-detalles__botton">
